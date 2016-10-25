@@ -9,7 +9,7 @@
 import UIKit
 import Realm
 
-class ViewController: UIViewController, UITableViewData {
+class ViewController: UIViewController, UITableViewDataSource {
     @IBAction func addTask(sender: AnyObject) {
         
         let alert = UIAlertController(title: "New item", message: "Add a new item", preferredStyle: .alert)
@@ -51,11 +51,11 @@ class ViewController: UIViewController, UITableViewData {
         tableView.reloadData() // [2]
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Int(todos.count) // [3]
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ cellForRowAttableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath as IndexPath) as UITableViewCell
         
         let index = UInt(indexPath.row)
