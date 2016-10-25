@@ -14,7 +14,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         
         let alert = UIAlertController(title: "New item", message: "Add a new item", preferredStyle: .alert)
         let saveAction = UIAlertAction(title: "Save", style: .Default)
-        { (action); -&amp;amp;amp;amp;amp;gt;  Void; in
+        { (action); Void; in
             let textField = alert.textFields![0] as UITextField
             let realm = RLMRealm.defaultRealm()
             if textField.text?.characters.count > 0 {
